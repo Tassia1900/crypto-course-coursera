@@ -161,7 +161,8 @@ for i in range(len(posibilidades)):
         aux.append(calc_positivos(posibilidades[i][j],i, c_set_lectura))
     positivos.append(aux)
 
-# Selección de el mejor positivo por cada posición y formación de la clave (k)
+'''
+# Selección delos mejores positivos por cada posición y formación de la clave (k)
 for i in range(len(positivos)):
     if len(positivos[i]) > 0:
         c_max = max(positivos[i])
@@ -172,9 +173,19 @@ for i in range(len(positivos)):
                 keys.append(posibilidades[i][j])
                 break
         
-key = ''.join([c for c in keys])
+        '''
+# Seleccion de un c onjunto de mejores positivos para cada opcion        
+for i in range(len(positivos)):
+    if len(positivos[i]) > 0:
+        aux = []
+        for j in range(len(positivos[i])):
+            if positivos[i][j] > 8:
+                aux.append(posibilidades[i][j])
+        keys.append(aux)        
 
-#key = '665139306ece89eec9efdb0ad8c3cbbb98a07431355e2a8bcda1635b952410552e98afdace8378acaac27fd8edb028dca0765e446bdec9fe8d0429eec5260bd869c9b071331e9ad41928f8ecaad240771acf9c346da1702f8f88805bc05a666bc7016368fe98f0571285317548fbcd88d8f9e8f7025fd0725bd8a9d88751770433635db8ae99fc7cecafd52f9c9543253a806bc0263a8b10609fbf924e9df0743c8f9ac461'
+# TODO generar un conjunto de claves con los candidatos
+
+key = ''.join([c for c in keys])
 
 message = ''.join([chr(int(hex_xor_8bit(key[z:z+2],target[z:z+2]),16)) for z in range(0,min(len(key),len(target)),2)])
 #message_ASCII = binascii.unhexlify(message)
