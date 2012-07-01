@@ -80,6 +80,7 @@ caracteres = ''
 caracteres+=string.lowercase[:30]
 caracteres+=string.uppercase[:30]
 '''
+
 # Other charset
 caracteres = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM .,-1234567890'"
 c_set = set(caracteres)
@@ -95,23 +96,23 @@ for i in range(len(MSGS_E)-1):
         aux.append(r_hex)
     xor_table.append(aux)
 
-#print [[t for t in c] for c in xor_table]
+print [[t for t in c] for c in xor_table]
 
-'''
-for c in caracteres:
-    xor_table_ASCII = []
-    hexprueba = hex(ord(c))
-    for i in range(len(xor_table)):
-        aux = []
-        for j in range(len(xor_table[i])):
-            aux.append(binascii.unhexlify(''.join([hex_xor_8bit(xor_table[i][j][z]+xor_table[i][j][z+1],hexprueba) for z in range(0,len(xor_table[i][j]),2)])))
-        xor_table_ASCII.append(aux)
-    print 'Resultado de xor con caracter: '+c
+posibilidades = []
+for m in range(len(longitud)):
+    ki = []
+    for c in caracteres:
+        xor_table_ASCII = []
+        hexprueba = hex(ord(c))
+        for i in range(len(xor_table)):
+            aux = []
+            for j in range(len(xor_table[i])):
+                aux.append(binascii.unhexlify(''.join([hex_xor_8bit(xor_table[i][j][z]+xor_table[i][j][z+1],hexprueba) for z in range(0,len(xor_table[i][j]),2)])))
+            xor_table_ASCII.append(aux)
+        print 'Resultado de xor con caracter: '+c
     print xor_table_ASCII
 
 #print [[len(t) for t in c] for c in xor_table_ASCII]
-
-'''
 
 
 '''
