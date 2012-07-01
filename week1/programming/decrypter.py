@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sys
 import string
 import binascii
@@ -70,6 +71,17 @@ def hex_xor_8bit(m1, m2):
         hex_res='0'+hex_res
     return hex_res
 
+def calc_positivos(subkey, pos, c_set):
+    count = 0
+    for m in MSGS_E:
+        if pos + 2 < len(m):
+            subciph = m[pos:pos + 2]
+            submess = hex_xor_8bit(subkey, subciph)
+            #print 'xor de key='+subkey+' y ciphertext='+subciph+' ---> '+submess+' ('+chr(int(submess,16))+')'
+            if (chr(int(submess,16)) in c_set):
+                count = count + 1
+        #print count
+    return count
 
 # Just interested in the size of the target (since the key k is the same)
 longitud = len(target)
@@ -84,8 +96,10 @@ caracteres+=string.uppercase[:30]
 # Other charset
 caracteres = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM .,-1234567890'"
 c_set = set(caracteres)
+c_set_lectura = set("qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM ")
 xor_table = []
 
+'''
 # Fill the xor_table (no tengo claro si este paso hay que hacerlo o no con 8bit)
 for i in range(len(MSGS_E)-1):
     aux = []
@@ -95,31 +109,78 @@ for i in range(len(MSGS_E)-1):
             r_hex = '0'+r_hex    
         aux.append(r_hex)
     xor_table.append(aux)
+'''
 
-print [[t for t in c] for c in xor_table]
+# Fill the xor_table
+for i in range(len(MSGS_E)-1):
+    aux = []
+    for j in range(i+1, len(MSGS_E)):
+        r_hex = ''.join([hex_xor_8bit(MSGS_E[i][z:z+2],MSGS_E[j][z:z+2]) for z in range(0,min(len(MSGS_E[i]),len(MSGS_E[j])),2)])
+        r_hex = r_hex[:longitud]
+        aux.append(r_hex)
+    xor_table.append(aux)
 
-posibilidades = []
-for m in range(len(longitud)):
-    ki = []
+
+#print [[t for t in c] for c in xor_table]
+
+posibilidades = []  # posibilidades para cada una de los 83 caracteres (166 posiciones)
+positivos = []      # positivos de cada uno de las 166 posiciones dadas las opciones en 'posibilidades'
+keys = []            # clave final compuesta por las posibilidades con más positivos
+for m in range(longitud):
+    km_set = set()         # var auxiliar para almacenar las posibilidades en cada posicion k[m]. Es un conjunto porque puede haber repetidos (optimizacion)
+    # Calculo de las posibilidades
     for c in caracteres:
-        xor_table_ASCII = []
-        hexprueba = hex(ord(c))
+        #print c
+        c_hex = hex(ord(c))        # valor en hexadecimal del caracter con el cual se hace el xor
         for i in range(len(xor_table)):
-            aux = []
             for j in range(len(xor_table[i])):
-                aux.append(binascii.unhexlify(''.join([hex_xor_8bit(xor_table[i][j][z]+xor_table[i][j][z+1],hexprueba) for z in range(0,len(xor_table[i][j]),2)])))
-            xor_table_ASCII.append(aux)
-        print 'Resultado de xor con caracter: '+c
-    print xor_table_ASCII
+                #print 'Iteracion i='+str(i)+', j='+str(j)+', m='+str(m)
+                if m + 2 <= len(xor_table[i][j]):        # necesario indexar el elemento m+2 en la tabla xor_table
+                    #c_xor_hex = ''.join([hex_xor_8bit(xor_table[i][j][z]+xor_table[i][j][z+1],c_hex) for z in range(0,len(xor_table[i][j]),2)])
+                    c_xor_hex = hex_xor_8bit(c_hex, xor_table[i][j][m:m+2])        # xor de (c_hex xor (m[v] xor m[z]))
+                    #print 'resultado de '+c+' xor '+xor_table[i][j][m:m+2]+' = '+chr(int(c_xor_hex,16))
+                    if chr(int(c_xor_hex,16)) in c_set_lectura:     
+                        '''si c_hex xor (m[v] xor m[j]) == caracter valido, se supone que c_hex corresponde a m[v] o a m[z] y por tanto
+                            se acaba teniendo (no se sabe cual de ellas asi que hay que valorar las dos posibilidades):
+                                - m[z] o
+                                - m[v] 
+                            con esto, y dados los ciphertexts (c) en el enunciado:
+                                - k = m xor c
+                        '''    
+                        km_set.add(hex_xor_8bit(c_xor_hex, MSGS_E[i][m:m+2])) 
+                        km_set.add(hex_xor_8bit(c_xor_hex, MSGS_E[i+(j + 1)][m:m+2]))                     
+                        #print '          key1: '+c_xor_hex+' xor '+MSGS_E[i][m:m+2]+' = ' +hex_xor_8bit(c_xor_hex, MSGS_E[i][m:m+2])
+                        #print '          key2: '+c_xor_hex+' xor '+MSGS_E[i+(j + 1)][m:m+2]+' = ' +hex_xor_8bit(c_xor_hex, MSGS_E[i+(j + 1)][m:m+2])
+                       
+    posibilidades.append(list(km_set))
 
-#print [[len(t) for t in c] for c in xor_table_ASCII]
+# Computo de los 'positivos' de cada posibidad
+for i in range(len(posibilidades)):
+    aux = []
+    for j in range(len(posibilidades[i])):
+        aux.append(calc_positivos(posibilidades[i][j],i, c_set_lectura))
+    positivos.append(aux)
 
+# Selección de el mejor positivo por cada posición y formación de la clave (k)
+for i in range(len(positivos)):
+    if len(positivos[i]) > 0:
+        c_max = max(positivos[i])
+        for j in range(len(positivos[i])):
+            #print 'i='+str(i)
+            #print 'j='+str(j)
+            if positivos[i][j] == c_max:
+                keys.append(posibilidades[i][j])
+                break
+        
+key = ''.join([c for c in keys])
 
-'''
-    TODO Procedimiento a seguir:
-        Se sabe que hay 83 caracteres (166 en hex). Caracter a caracter, se va probando con los diferentes símbolos del charset y se calcula cuál es el que genera
-        más texto en claro en esa posición (esto es, caracteres que puedan pertencecer al mensaje, es decir, pertenecientes al charset). Para esto será necesario tener
-        en cuenta las 55 (11C2) posibles combinaciones generadas.
-            - cada vez que se localiza el caracter que genera más 'positivos', a partir de éste se calcula el símbolo de la clave k[i] 2 posibilidades
-            - se añade el símbolo correspondiente a la clave k que se va formando
-'''
+#key = '665139306ece89eec9efdb0ad8c3cbbb98a07431355e2a8bcda1635b952410552e98afdace8378acaac27fd8edb028dca0765e446bdec9fe8d0429eec5260bd869c9b071331e9ad41928f8ecaad240771acf9c346da1702f8f88805bc05a666bc7016368fe98f0571285317548fbcd88d8f9e8f7025fd0725bd8a9d88751770433635db8ae99fc7cecafd52f9c9543253a806bc0263a8b10609fbf924e9df0743c8f9ac461'
+
+message = ''.join([chr(int(hex_xor_8bit(key[z:z+2],target[z:z+2]),16)) for z in range(0,min(len(key),len(target)),2)])
+#message_ASCII = binascii.unhexlify(message)
+#print message_ASCII
+print message
+
+#print [[t for t in c] for c in posibilidades]
+#print [[t for t in c] for c in positivos]
+#print key
