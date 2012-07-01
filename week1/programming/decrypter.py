@@ -74,13 +74,16 @@ def hex_xor_8bit(m1, m2):
 # Just interested in the size of the target (since the key k is the same)
 longitud = len(target)
 
+'''
 # String with the caracters of interest
 caracteres = ''
 caracteres+=string.lowercase[:30]
 caracteres+=string.uppercase[:30]
-
+'''
+# Other charset
+caracteres = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM .,-1234567890'"
+c_set = set(caracteres)
 xor_table = []
-xor_table_ASCII = []
 
 # Fill the xor_table (no tengo claro si este paso hay que hacerlo o no con 8bit)
 for i in range(len(MSGS_E)-1):
@@ -92,27 +95,30 @@ for i in range(len(MSGS_E)-1):
         aux.append(r_hex)
     xor_table.append(aux)
 
-#print [[len(t) for t in c] for c in xor_table]
+#print [[t for t in c] for c in xor_table]
 
-cprueba = 'a'
-hexprueba = hex(ord(cprueba))
-for i in range(len(xor_table)):
-    aux = []
-    for j in range(len(xor_table[i])):
-        '''
-        aux2 = ''
-        #print len(xor_table[i][j])
-        for z in range(0,len(xor_table[i][j]),2):
-            #print 'xor de: '+xor_table[i][j][z]+xor_table[i][j][z+1]+' y '+hexprueba
-            aux2+=hex_xor_8bit(xor_table[i][j][z]+xor_table[i][j][z+1],hexprueba)
-            #print aux2
-        aux.append(aux2)
-        '''
-        #print ''.join([hex_xor(xor_table[i][j][z]+xor_table[i][j][z+1],hexprueba) for z in range(0,len(xor_table[i][j]),2)])
-        #print len(''.join([hex_xor(xor_table[i][j][z]+xor_table[i][j][z+1],hexprueba) for z in range(0,len(xor_table[i][j]),2)]))
-        aux.append(binascii.unhexlify(''.join([hex_xor_8bit(xor_table[i][j][z]+xor_table[i][j][z+1],hexprueba) for z in range(0,len(xor_table[i][j]),2)])))
-    xor_table_ASCII.append(aux)
+'''
+for c in caracteres:
+    xor_table_ASCII = []
+    hexprueba = hex(ord(c))
+    for i in range(len(xor_table)):
+        aux = []
+        for j in range(len(xor_table[i])):
+            aux.append(binascii.unhexlify(''.join([hex_xor_8bit(xor_table[i][j][z]+xor_table[i][j][z+1],hexprueba) for z in range(0,len(xor_table[i][j]),2)])))
+        xor_table_ASCII.append(aux)
+    print 'Resultado de xor con caracter: '+c
+    print xor_table_ASCII
 
-print xor_table_ASCII
 #print [[len(t) for t in c] for c in xor_table_ASCII]
 
+'''
+
+
+'''
+    TODO Procedimiento a seguir:
+        Se sabe que hay 83 caracteres (166 en hex). Caracter a caracter, se va probando con los diferentes símbolos del charset y se calcula cuál es el que genera
+        más texto en claro en esa posición (esto es, caracteres que puedan pertencecer al mensaje, es decir, pertenecientes al charset). Para esto será necesario tener
+        en cuenta las 55 (11C2) posibles combinaciones generadas.
+            - cada vez que se localiza el caracter que genera más 'positivos', a partir de éste se calcula el símbolo de la clave k[i] 2 posibilidades
+            - se añade el símbolo correspondiente a la clave k que se va formando
+'''
