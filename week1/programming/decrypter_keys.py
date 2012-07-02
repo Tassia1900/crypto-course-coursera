@@ -235,7 +235,7 @@ print keys
 
 keys = [['5e', '5d', '5a', '5b', '59', '55', '54', '57', '56', '50', '53', '60', '61', '62', '64', '65', '66', '67', '68', '6b', '7e', '7d', '7b', '7a', '48', '46', '47', '44', '45', '42', '40', '41', '77', '76', '75', '74', '73', '70', '79', '4b'], ['51', '46'], ['24', '25', '26', '28', '29', '2b', '06', '04', '05', '08', '09', '3b', '3a', '3f', '3e', '3d', '39', '38', '37', '35', '34', '0b', '1a', '1b', '1e', '1d', '1f', '15', '14', '17', '19', '18'], [], ['6e'], [], ['89'], ['d8', 'd9', 'd2', 'd3', 'd0', 'cc', 'df', 'dd', 'de', 'dc', 'ee', 'ed', 'ef', 'ec', 'eb', 'e9', 'e8', 'e3', 'e2', 'fd', 'f0', 'ff', 'cb', 'cf', 'ce', 'cd', 'c9', 'c8', 'c3', 'c2', 'f2', 'f3', 'f8', 'f9', 'fc', 'fe'], ['d8', 'd9', 'df', 'dd', 'de', 'dc', 'ee', 'ed', 'ef', 'ea', 'eb', 'e9', 'e1', 'e3', 'e2', 'cb', 'ca', 'cf', 'ce', 'cd', 'c9', 'c3', 'c2', 'c1', 'f8', 'f9', 'fc', 'fd', 'fe', 'ff'], ['ef'], ['db'], [], ['c3', 'd8', 'df', 'dd', 'de', 'dc', 'da', 'e1', 'e3', 'c1', 'f8', 'fa', 'fc', 'fd', 'fe', 'ff'], [], ['d3', 'd0', 'db', 'da', 'ee', 'ed', 'ef', 'ea', 'ec', 'eb', 'e9', 'e8', 'e7', 'e6', 'cc', 'cb', 'ca', 'cf', 'ce', 'cd', 'c9', 'c8', 'c7', 'c6', 'f0', 'f3', 'fa', 'fb'], [], ['b4', 'b5', '88', '89', 'be', 'bf', 'ba', 'bb', 'bc', '8b', '8a', '8f', '8d', '8e', '9a', '9c', '9b', '9e', '9f', '99', '98', '95', '94', '96', 'b6', 'aa', 'ab', 'ae', 'ad', 'af', 'b8', 'b9', 'a9', 'a8'], ['a0'], ['74'], [], ['35'], [], ['24', '27', '28', '29', '2d', '2e', '2a', '2b', '2c', '07', '04', '08', '09', '37', '36', '35', '0b', '0c', '0a', '0d', '0e', '15', '17', '16'], [], ['d2', 'd0', 'd1', 'c7', 'c5', 'db', 'ee', 'ed', 'ef', 'ea', 'ec', 'eb', 'e9', 'e5', 'e4', 'e7', 'e6', 'cc', 'cb', 'ca', 'cf', 'ce', 'cd', 'c9', 'c6', 'c4', 'f0', 'f1', 'f2', 'fa', 'fb', 'da'], [], ['63'], [], ['95'], [], ['25', '26', '27', '21', '22', '23', '28', '2b', '02', '03', '01', '06', '07', '05', '08', '3a', '39', '33', '30', '0b', '1a', '10', '13', '19'], [], ['24', '26', '27', '28', '29', '2d', '2e', '2f', '2a', '2b', '2c', '06', '07', '04', '08', '09', '3b', '39', '38', '0b', '0c', '0a', '0f', '0d', '0e', '1b', '19', '18'], [], ['84', '85', '8b', '8c', '8f', '8e', 'a5', 'a4', '88', '89', 'ac', 'ab', 'ae', 'af', '87', 'a7', 'a9', 'a8'], [], ['d8', 'd9', 'd2', 'd3', 'd0', 'c5', 'c4', 'ee', 'ed', 'ef', 'ec', 'eb', 'e9', 'e8', 'e5', 'e4', 'e7', 'cc', 'cb', 'cf', 'ce', 'cd', 'c9', 'c8', 'c7', 'f0', 'f2', 'f3', 'f8', 'f9', 'fa', 'da'], [], ['59', '58', '55', '54', '68', '69', '6b', '48', '49', '75', '74', '79', '78', '4b'], [], ['aa'], [], ['5e', '5f', '51', '50', '52', '6c', '6d', '6e', '7f', '7e', '72', '71', '70', '4d', '4e', '4c'], [], ['ed'], [], ['28', '29', '2e', '2f', '2a', '2c', '08', '09', '3b', '38', '0c', '0a', '0f', '0e', '1b', '18'], [], ['9d', '83', '80', '81', 'b8', 'bd', 'be', 'bf', 'ba', 'bb', 'bc', '8b', '8a', 'a0', '9a', '9c', '9b', '9e', '9f', '98', 'aa', 'ab', 'a1', 'a3'], [], ['5e', '5f', '5c', '55', '54', '57', '56', '52', '60', '62', '63', '68', '69', '6a', '6b', '7f', '7e', '7c', '48', '49', '42', '43', '40', '77', '76', '75', '74', '72', '4b', '4a'], [], ['6b'], [], ['c9'], ['fe'], ['92', 'b0', 'b2', 'b3', '8c', '8d', '8e', '90', '93', 'ac', 'ae', 'ad'], [], ['22', '23', '28', '29', '2d', '2e', '2f', '2a', '2b', '2c', '02', '03', '08', '09', '3a', '39', '38', '0b', '0c', '0a', '0f', '0d', '0e', '1a', '19', '18'], [], ['c5'], [], ['0b'], [], ['60', '63', '69', '6a', '6b', '6c', '6d', '6f', '49', '43', '40', '4f', '4d', '4b', '4c', '4a'], [], ['b0'], [], ['33'], [], ['9a'], [], ['3b', '3f', '3e', '3d', '39', '38', '1b', '1e', '1d', '1f', '14', '19', '18'], [], ['d8', 'd9', 'df', 'de', 'db', 'da', 'cf', 'ee', 'ef', 'e9', 'e8', 'e5', 'e4', 'ce', 'c9', 'c8', 'c5', 'c4', 'f8', 'f9', 'fa', 'fb', 'fe', 'ff'], [], ['9d', 'b5', 'b6', '89', 'bd', 'ba', 'bb', 'bc', '8b', '8a', '9a', '9c', '9b', '95', '97', '96', 'b7', 'aa', 'ab', 'a9'], [], ['40'], [], ['2d', '2c', '3a', '3f', '3e', '3d', '39', '38', '0c', '0d', '1a', '1e', '1d', '1f', '19', '18'], [], ['86', '87', 'bd', 'bc', '9c', '9d', 'a7', 'a6'], [], ['6d'], [], ['55', '54', '57', '56', '51', '50', '53', '52', '65', '67', '69', '6a', '6b', '6c', '6d', '6f', '49', '47', '45', '77', '76', '75', '74', '73', '72', '71', '70', '4f', '4d', '4b', '4c', '4a'], [], ['8f'], [], ['96', 'b4', '88', 'b1', 'b3', '82', '83', '80', '84', '8a', '8f', '8d', '91', '93', '94', 'b6', 'aa', 'ad', 'af', '86', 'a0', 'a3', 'a2', 'a4', 'a6', 'a8'], [], ['c0', 'c6', 'c4', 'e5', 'e4', 'e6', 'e1', 'e0', 'e2', 'c2', 'c1', 'c5'], [], ['5b', '59', '60', '62', '64', '65', '66', '67', '68', '6b', '6c', '6d', '6e', '7b', '48', '46', '47', '44', '45', '42', '40', '79', '4d', '4e', '4b', '4c'], [], ['c3', 'd8', 'd9', 'd2', 'd0', 'd1', 'c0', 'c4', 'df', 'dd', 'db', 'dc', 'ed', 'ef', 'e4', 'e7', 'e6', 'e0', 'e3', 'e2', 'cf', 'cd', 'c7', 'c6', 'f0', 'f1', 'f2', 'f8', 'f9', 'fb', 'fc', 'fd', 'ff', 'c2'], [], ['5e', '5f', '5c', '52', '60', '62', '63', '7f', '7e', '7c', '42', '43', '40', '72'], [], ['fe'], [], ['f0'], [], ['28', '29', '2d', '2e', '2f', '2a', '2b', '2c', '08', '09', '3c', '33', '32', '31', '30', '37', '36', '35', '34', '0b', '0c', '0a', '0f', '0d', '0e', '1c', '11', '10', '13', '12', '15', '14', '17', '16'], [], ['33', '32', '31', '37', '36', '35', '11', '13', '12', '15', '17', '16'], [], ['48'], [], ['cd'], [], ['d8', 'd4', 'd5', 'd2', 'd0', 'd1', 'dd', 'de', 'db', 'dc', 'da', 'cf', 'ee', 'ef', 'ce', 'f0', 'f1', 'f2', 'f4', 'f5', 'f8', 'fa', 'fb', 'fc', 'fd', 'fe'], [], ['e8'], [], ['24', '25', '22', '23', '02', '03', '04', '05'], [], ['d6', 'd7', 'd4', 'd2', 'd3', 'd0', 'd1', 'c0', 'db', 'ed', 'ef', 'ec', 'e1', 'e0', 'cc', 'cf', 'cd', 'c1', 'f0', 'f1', 'f2', 'f3', 'f4', 'f6', 'f7', 'fa', 'fb', 'da'], [], ['5d', '5f', '5c', '5b', '59', '58', '7f', '7d', '7c', '7b', '79', '78'], [], ['b0', 'b1', 'b2', 'b3', 'bd', 'be', 'bf', '8b', '8c', '8a', '8f', '8d', '8e', '9e', '9d', '9f', '91', '90', '93', '92', '88', '89', 'aa', 'ac', 'ab', 'ae', 'ad', 'af', 'a9', 'a8'], [], ['83', '80', '81', '86', '87', '84', '85', 'ba', 'bb', '8c', '8d', '9a', '9b', '98', 'ac', 'ad', 'b8', 'a1', 'a0', 'a3', 'a5', 'a4', 'a7', 'a6'], [], ['77'], [], ['33'], [], ['5e', '5d', '5f', '5a', '5c', '5b', '59', '58', '54', '57', '61', '62', '63', '64', '65', '66', '68', '6a', '6b', '6c', '6f', '7f', '7e', '7d', '7c', '7b', '7a', '48', '46', '44', '45', '42', '43', '41', '77', '74', '79', '78', '4f', '4b', '4c', '4a'], [], ['ae'], [], ['d9', 'd0', 'd1', 'df', 'dd', 'de', 'db', 'dc', 'da', 'ea', 'eb', 'e4', 'e7', 'e6', 'e1', 'e0', 'e3', 'e2', 'cb', 'ca', 'c3', 'c2', 'c1', 'c0', 'c7', 'c6', 'c4', 'f0', 'f1', 'f9', 'fa', 'fb', 'fc', 'fd', 'fe', 'ff'], [], ['d7', 'd5', 'ee', 'ea', 'ec', 'eb', 'e9', 'e8', 'e1', 'cc', 'cb', 'ca', 'ce', 'c9', 'c8', 'c1', 'f5', 'f7', 'fa', 'da'], [], ['d5'], [], ['9f', 'be', 'bf', 'ba', 'bb', 'bc', '9a', '9c', '9b', '9e'], [], ['5d', '5f', '5c', '55', '54', '60', '61', '62', '63', '64', '66', '67', '7f', '7d', '7c', '46', '47', '44', '42', '43', '40', '41', '75', '74'], [], ['26', '29', '2a', '2b', '06', '09', '3b', '3a', '3e', '3d', '39', '38', '32', '31', '30', '37', '36', '35', '34', '0b', '0a', '1a', '1b', '1e', '1d', '11', '10', '12', '15', '14', '17', '16', '19', '18'], [], ['6b'], [], ['26', '20', '22', '23', '02', '03', '00', '06', '33', '30', '10', '13'], [], ['91', '92', '94', '97', '96', 'b4', 'b5', '88', '89', 'b0', 'b1', 'b2', 'b3', '80', '81', '8b', '8c', '8a', '8f', '8d', '8e', '90', '93', '95', 'b6', 'b7', 'aa', 'ac', 'ab', 'ae', 'ad', 'af', 'a1', 'a0', 'a9', 'a8'], [], ['5b', '57', '56', '60', '61', '62', '63', '64', '66', '67', '6c', '6d', '7b', '46', '47', '44', '42', '43', '40', '41', '77', '76', '4d', '4c'], [], ['b5', '82', '83', '80', '81', '84', '85', 'be', 'bf', 'bc', '8b', '8a', 'a0', 'a2', '9c', '9e', '9f', '95', '88', '89', 'aa', 'ab', '87', 'a1', 'a3', 'a5', 'a4', 'a7', 'a9', 'a8'], [], ['4e'], [], ['d6', 'd4', 'd2', 'd0', 'd1', 'c7', 'dc', 'e7', 'fc', 'f0', 'f1', 'f2', 'f4', 'f6'], [], ['28', '29', '2d', '2a', '2b', '2c', '08', '09', '3c', '3b', '3f', '3e', '38', '37', '36', '34', '0b', '0c', '0a', '0d', '1c', '1b', '1e', '1f', '14', '17', '16', '18'], [], ['9a'], [], ['61']]
 
-
+'''
 # Backtracking y generar todas las posibles combinaciones de claves. Utilizar un diccionario para detectar qué combinaciones son mejores y cuales peores.
 start = time.time()
 key_candidates = []
@@ -244,16 +244,153 @@ elapsed = (time.time() - start)
 print str(elapsed)+' segundos en generar las claves candidatas con backtracking'
 print '----------------'
 print key_candidates
+'''
 
+# Método alternativo utilizando una lista de índices:
+lista_almacen = []
+lista = keys
+'''
+Notese que al generar la lista aquellas sublistas con cero elemento contendran un -1
+'''
+lista_index = []
+for i in range(len(lista)): 
+    lista_index.append(len(lista[i]) - 1)
+
+lista_index_init = copy.deepcopy(lista_index)
 
 '''
-key = ''.join([c for c in keys])
-message = ''.join([chr(int(hex_xor_8bit(key[z:z+2],target[z:z+2]),16)) for z in range(0,min(len(key),len(target)),2)])
-#message_ASCII = binascii.unhexlify(message)
-#print message_ASCII
-print message
+Algoritmo para recorrer todas las posibilidades
+def generar_posibilidades(lista_index, i, lista_index_init):
+    # IMPRESION SOLUCION
+    #   (si hubiera indices con -1 denota que hay que introducir un caracter 'tonto')
+    solucion = []
+    for j in range(len(lista_index)):
+        if lista_index[j] == -1:
+            solucion.append('00')
+        else:
+            solucion.append(lista[j][lista_index[j]])
+    lista_almacen.append(lista_index)
+    #print lista_index
+    #print len(lista_almacen)
+    key_candidate = ''.join([c for c in solucion])
+    message = ''.join([chr(int(hex_xor_8bit(key_candidate[z:z+2],target[z:z+2]),16)) for z in range(0,min(len(key_candidate),len(target)),2)])
+    print message
 
-#print [[t for t in c] for c in posibilidades]
-#print [[t for t in c] for c in positivos]
-#print key
+    # CONTNUAR SOLO SI NO SE HA LLEGADO AL FINAL
+    continue_flag = False
+    for m in range(len(lista_index)):
+        if(lista_index[m] > 0):
+            continue_flag = True 
+            break
+    
+    if(continue_flag):
+        # SIGUIENTE ITERACION
+        #print 'i='+str(i)+', lista_index[i]='+str(lista_index[i])
+        flag = True
+        flag_init = False           # Este flag se activa cuando se detecta que se llega a 0. Hace que se empiece a descender desde la ultima posicion de nuevo
+        while flag:
+            if lista_index[i] == -1:
+                i= i-1
+            elif lista_index[i] == 0:     # si se ha llegado al principio de uno de los indices, se resta uno al anterior y se vuelve a su valor maximo
+                lista_index[i] = lista_index_init[i]
+                i = i-1
+                flag_init = True
+            else:
+                lista_index[i] = lista_index[i] - 1
+                flag = False            # salir del bucle
+        if flag_init:
+            generar_posibilidades(lista_index,len(lista_index) -1, lista_index_init)
+        else:
+            generar_posibilidades(lista_index,i, lista_index_init)
+        
+generar_posibilidades(lista_index, len(lista_index) - 1, lista_index_init)
 '''
+
+def generar_posibilidades(lista_index, i, lista_index_init):
+
+    # IMPRESION SOLUCION
+    #   (si hubiera indices con -1 denota que hay que introducir un caracter 'tonto')
+    solucion = []
+    for j in range(len(lista_index)):
+        if lista_index[j] == -1:
+            solucion.append('00')
+        else:
+            solucion.append(lista[j][lista_index[j]])
+    lista_almacen.append(lista_index)
+    #print lista_index
+    #print len(lista_almacen)
+    key_candidate = ''.join([c for c in solucion])
+    message = ''.join([chr(int(hex_xor_8bit(key_candidate[z:z+2],target[z:z+2]),16)) for z in range(0,min(len(key_candidate),len(target)),2)])
+    print message
+
+    continue_flag = True
+    while(continue_flag):
+
+        # SIGUIENTE ITERACION
+        flag = True
+        flag_init = False           # Este flag se activa cuando se detecta que se llega a 0. Hace que se empiece a descender desde la ultima posicion de nuevo
+        while flag:
+            if lista_index[i] == -1:
+                i= i-1
+            elif lista_index[i] == 0:     # si se ha llegado al principio de uno de los indices, se resta uno al anterior y se vuelve a su valor maximo
+                lista_index[i] = lista_index_init[i]
+                i = i-1
+                flag_init = True
+            else:
+                lista_index[i] = lista_index[i] - 1
+                flag = False            # salir del bucle
+        if flag_init:
+            #generar_posibilidades(lista_index,len(lista_index) -1, lista_index_init)
+            i = len(lista_index) - 1
+
+            # IMPRESION SOLUCION
+            #   (si hubiera indices con -1 denota que hay que introducir un caracter 'tonto')
+            solucion = []
+            for j in range(len(lista_index)):
+                if lista_index[j] == -1:
+                    solucion.append('00')
+                else:
+                    solucion.append(lista[j][lista_index[j]])
+            lista_almacen.append(lista_index)
+            #print lista_index
+            #print len(lista_almacen)
+            key_candidate = ''.join([c for c in solucion])
+            message = ''.join([chr(int(hex_xor_8bit(key_candidate[z:z+2],target[z:z+2]),16)) for z in range(0,min(len(key_candidate),len(target)),2)])
+            print message
+
+        else:
+            #generar_posibilidades(lista_index,i, lista_index_init)
+
+            # IMPRESION SOLUCION
+            #   (si hubiera indices con -1 denota que hay que introducir un caracter 'tonto')
+            solucion = []
+            for j in range(len(lista_index)):
+                if lista_index[j] == -1:
+                    solucion.append('00')
+                else:
+                    solucion.append(lista[j][lista_index[j]])
+            lista_almacen.append(lista_index)
+            #print lista_index
+            #print len(lista_almacen)
+            key_candidate = ''.join([c for c in solucion])
+            message = ''.join([chr(int(hex_xor_8bit(key_candidate[z:z+2],target[z:z+2]),16)) for z in range(0,min(len(key_candidate),len(target)),2)])
+            print message
+            
+
+        # CONTNUAR SOLO SI NO SE HA LLEGADO AL FINAL
+        continue_flag = False
+        for m in range(len(lista_index)):
+            if(lista_index[m] > 0):
+                continue_flag = True 
+                break
+
+
+start = time.time()
+generar_posibilidades(lista_index, len(lista_index) - 1, lista_index_init)
+elapsed = (time.time() - start)
+print str(elapsed)+' segundos en terminar'
+
+
+
+
+
