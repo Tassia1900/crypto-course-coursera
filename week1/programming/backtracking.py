@@ -1,4 +1,5 @@
 import copy
+import time
 
 # Algoritmo de backtracking
 
@@ -10,7 +11,7 @@ def backtracking(i, key, lista, lista_sol):
         for j in range(len(lista[i])):
             c_key = copy.deepcopy(key)
             c_key.append(lista[i][j])
-            #print 'imprimiendo clave: '+str(c_key)
+            print 'imprimiendo clave: '+str(c_key)
             lista_sol.append(c_key)
     else:                                 
         if(len(lista[i]) == 0):
@@ -23,6 +24,7 @@ def backtracking(i, key, lista, lista_sol):
                 c_key.append(lista[i][j])
                 #print 'i='+str(i)+', j='+str(j)+'key: '+str(c_key)
                 backtracking(i+1,c_key, lista, lista_sol)
+                time.sleep(2)
 
 backtracking(0,[],lista, lista_sol)
 print len(lista_sol)
