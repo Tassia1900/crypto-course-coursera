@@ -111,16 +111,17 @@ def backtracking_xor_hex(i, key, lista, lista_sol):
             key_candidate = ''.join([c for c in c_key])
             message = ''.join([chr(int(hex_xor_8bit(key_candidate[z:z+2],target[z:z+2]),16)) for z in range(0,min(len(key_candidate),len(target)),2)])
             print message
-
     else:                                 
         if(len(lista[i]) == 0):
             c_key = copy.deepcopy(key)
             c_key.append('00')
+            print '     key candidate for now: '+str(c_key)
             backtracking(i+1,c_key, lista, lista_sol)
         else:
             for j in range(len(lista[i])):
                 c_key = copy.deepcopy(key)
                 c_key.append(lista[i][j])
+                print '     key candidate for now: '+str(c_key)
                 backtracking(i+1,c_key,lista, lista_sol)
 
 
