@@ -103,18 +103,6 @@ c_set = set(caracteres)
 c_set_lectura = set("qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM ")
 xor_table = []
 
-'''
-# Fill the xor_table (no tengo claro si este paso hay que hacerlo o no con 8bit)
-for i in range(len(MSGS_E)-1):
-    aux = []
-    for j in range(i+1, len(MSGS_E)):
-        r_hex = hex_xor(MSGS_E[i],MSGS_E[j])[:longitud]
-        if len(r_hex) % 2 != 0:
-            r_hex = '0'+r_hex    
-        aux.append(r_hex)
-    xor_table.append(aux)
-'''
-
 # Fill the xor_table
 for i in range(len(MSGS_E)-1):
     aux = []
@@ -130,7 +118,7 @@ start = time.time()
 posibilidades = []  # posibilidades para cada una de los 83 caracteres (166 posiciones)
 positivos = []      # positivos de cada uno de las 166 posiciones dadas las opciones en 'posibilidades'
 keys = []            # clave final compuesta por las posibilidades con más positivos
-for m in range(longitud):
+for m in range(10):
     km_set = set()         # var auxiliar para almacenar las posibilidades en cada posicion k[m]. Es un conjunto porque puede haber repetidos (optimizacion)
     # Calculo de las posibilidades
     for c in caracteres:
@@ -176,6 +164,10 @@ for i in range(len(positivos)):
             if positivos[i][j] == c_max:
                 keys.append(posibilidades[i][j])
                 break
+
+key_candidate = ''.join([c for c in keys])
+message = ''.join([chr(int(hex_xor_8bit(key_candidate[z:z+2],target[z:z+2]),16)) for z in range(0,min(len(key_candidate),len(target)),2)])
+print message
         
         '''
 
@@ -190,19 +182,23 @@ def calcular_combinaciones(keys):
             count = count*i
     print 'Numbero de combinaciones='+str(count)
         
-# Seleccion de un c onjunto de mejores positivos para cada opcion        
+        
+# Seleccion de un conjunto de mejores positivos para cada opcion        
 for i in range(len(positivos)):
     if len(positivos[i]) > 0:
         aux = []
         for j in range(len(positivos[i])):
-            if positivos[i][j] > 10:
+            if positivos[i][j] >= 11:
                 aux.append(posibilidades[i][j])
         keys.append(aux)        
 
 elapsed = (time.time() - start)
 print str(elapsed)+' segundos en generar las posibilidades (selección de mejores positivos incluída)'
 print keys
+
+
 calcular_combinaciones(keys)
+#print posibilidades
 
 
 lista_almacen = []
