@@ -27,6 +27,6 @@ def strxor(a, b):     # xor two strings of different lengths
         return "".join([chr(ord(x) ^ ord(y)) for (x, y) in zip(a, b[:len(a)])])
 
 print binary_xor(bin(int(c1,16)),bin(int(c2,16)))
-print bin(int(strxor(c1.decode('hex'), c2.decode('hex')).encode('hex'),16))
+#print bin(int(strxor(c1.decode('hex'), c2.decode('hex')).encode('hex'),16))
 
 # La solucion contiene todo 1s en donde corresponde (parte inferior o superior)
